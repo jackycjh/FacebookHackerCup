@@ -1,0 +1,113 @@
+A:       ABA C  U  S
+        [123 4  5  6]
+B: ASUCABABA C  U  S  A
+  [123456789,10,11,12,13]
+
+  ASUCABABACUSA
+      ABAC
+         A
+          AB
+           A
+            A
+             A
+              A
+              false
+
+# Proven: simplified
+C: ABABACUS (valid)
+   ABAC
+      A
+       AB
+        A
+         A
+          A
+          false
+
+i j
+---
+1 1
+2 2
+1 2
+1 3
+1 4
+1 5
+2 6
+3 7
+4 8
+1 8
+
+1 9
+2 10
+1 10
+1 11
+1 12
+1 13
+2 14
+false
+
+====
+A: FACEBOOK
+  [12345678]
+B: Impossible
+
+====
+A:       XYZXZYX
+B: XZYXYZXYZXZYXYZXYZYX
+      XYZXZ
+          X
+            XY
+             X
+               XYZXZ
+                   X
+                      false
+
+# Note: XY, XZ, repeat XYZ
+C:    XYZXYZXZYX (valid)
+      XYZXZ
+          X
+            XY
+             X
+               X
+               false
+
+# Proven: must repeat XYZ fully
+# Note: XY, XZ, repeat XY
+D:     XYXYZXZYX (invalid)
+       XYZ
+         XYZXZYX
+               true
+
+======
+# My sample with repeated, start with non-index 0: BC, BD
+A:     ABCDBDE
+B: ABCDABCDBDE (invalid)
+   ABCDB
+       ABCDBDE
+             true
+
+======
+# Proven: must start with index 0
+# My sample with repeated, start with index 0: BC, BD
+A:    BCDBDE
+B: BCDBCDBDE (valid)
+   BCDBD
+       B
+         BC
+          B
+           false
+
+======
+# Proven: repetitive pattern can have >2 chars
+# My sample with repeated, start with index 0: BCD, BCE
+A:    BCDBCE
+B: BCDBCDBCE (valid)
+   BCDBCE
+        B
+         BCD
+           B
+           false
+
+Proven points:
+1. Fool the program by fully repeating prefix, up to repeated pattern
+2. Repeating pattern must start with index 0
+3. Repeating pattern length can be >2

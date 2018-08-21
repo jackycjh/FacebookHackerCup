@@ -1,0 +1,12 @@
+4 3 1
+LikeSign
+Arcade
+SweetStop
+SwagStore
+
+V=1: [0,0,0,0] => {LikeSign, Arcade, SweetStop}
+V=2: [1,1,1,0] => {LikeSign, Arcade, SwagStore}
+V=3: [2,2,1,1] => {LikeSign, SweetStop, SwagStore}
+V=4: [3,2,2,2] => {Arcade, SweetStop, SwagStore}
+V=5: [3,3,3,3] => {...}
+V=6: ...
