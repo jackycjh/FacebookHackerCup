@@ -2,4 +2,4 @@
 
 ## Tourist: 25 points
 
-Reference: https://www.facebook.com/hackercup/problem/1632703893518337/
+Problem statement: https://www.facebook.com/codingcompetitions/hacker-cup/2018/qualification-round/problems/A
